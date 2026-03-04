@@ -21,10 +21,10 @@ public class DataSeeder implements CommandLineRunner {
         city bitola = cityRepository.findByNameIgnoreCase("Битола")
                 .orElseGet(() -> cityRepository.save(city.builder().name("Битола").build()));
 
-        category mechanic = categoryRepository.findByNameIgnoreCase("Автомеханичар")
-                .orElseGet(() -> categoryRepository.save(category.builder().name("Автомеханичар").build()));
-        category barber = categoryRepository.findByNameIgnoreCase("Фризер")
-                .orElseGet(() -> categoryRepository.save(category.builder().name("Фризер").build()));
+        Category mechanic = categoryRepository.findByNameIgnoreCase("Автомеханичар")
+                .orElseGet(() -> categoryRepository.save(Category.builder().name("Автомеханичар").build()));
+        Category barber = categoryRepository.findByNameIgnoreCase("Фризер")
+                .orElseGet(() -> categoryRepository.save(Category.builder().name("Фризер").build()));
 
         if (serviceProviderRepository.count() == 0) {
             serviceProviderRepository.save(ServiceProvider.builder()

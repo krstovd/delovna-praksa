@@ -4,6 +4,7 @@ package com.pronajdiusluga.app.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.service.Service;
 
 import java.util.List;
 

@@ -1,4 +1,5 @@
 package com.pronajdiusluga.app.model;
+import com.pronajdiusluga.app.repository.Category;
 import jakarta.persistence.*;
 import lombok.*;
 
