@@ -2,6 +2,6 @@ package com.pronajdiusluga.app.model;
 
 public enum Role {
     USER,
-    PROVIDER,
+    SERVICE_PROVIDER,
     ADMIN
 }

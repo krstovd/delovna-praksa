@@ -1,5 +1,7 @@
 package com.pronajdiusluga.app;
 
+import com.pronajdiusluga.app.model.Role;
+import com.pronajdiusluga.app.repository.UserRepository;
 import org.apache.catalina.User;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
