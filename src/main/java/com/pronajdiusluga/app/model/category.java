@@ -1,16 +1,23 @@
 package com.pronajdiusluga.app.model;
+
+
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
-@Builder
-public class category {
+@Data
+@NoArgsConstructor
+public class Category {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
+    private String description;
+    @OneToMany(mappedBy = "category")
+    private List<ServiceProvider> serviceProviders;
 
-    @Column(nullable = false, unique = true)
-    private String name; // пр: "Автомеханичар", "Фризер"
 }

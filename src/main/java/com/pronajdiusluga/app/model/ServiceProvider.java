@@ -21,5 +21,5 @@ public class ServiceProvider {
     private city city;
 
     @ManyToOne(optional = false)
-    private category category;
+    private Category category;
 }
