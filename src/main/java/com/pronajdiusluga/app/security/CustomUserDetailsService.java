@@ -1,10 +1,20 @@
 package com.pronajdiusluga.app.security;
 
+import com.pronajdiusluga.app.model.User;
 import com.pronajdiusluga.app.repository.UserRepository;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class CustomUserDetailsService  implements UserDetailService{
+public class CustomUserDetailsService implements UserDetailsService {
 
     private final UserRepository userRepository;
 
@@ -14,10 +24,11 @@ public class CustomUserDetailsService  implements UserDetailService{
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
         User u = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
 
-        // hasRole("ADMIN") => бара ROLE_ADMIN
+        // hasRole("ADMIN") -> ROLE_ADMIN
         return new org.springframework.security.core.userdetails.User(
                 u.getUsername(),
                 u.getPassword(),
