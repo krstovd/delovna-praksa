@@ -6,10 +6,11 @@ import lombok.*;
 @Getter @Setter
 @NoArgsConstructor @AllArgsConstructor
 @Builder
-public class city {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class category {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private String name; // пр: "Скопје"
+    private String name; // пр: "Автомеханичар", "Фризер"
 }
